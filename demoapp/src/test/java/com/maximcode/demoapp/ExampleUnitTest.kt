@@ -1,4 +1,4 @@
-package com.maximcode.klogger
+package com.maximcode.demoapp
 
 import org.junit.Test
 
