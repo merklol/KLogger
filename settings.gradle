@@ -1,3 +1,4 @@
+include ':klogger'
 include ':demoapp'
 include ':app'
 rootProject.name = "KLogger"
