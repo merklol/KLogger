@@ -1,4 +1,4 @@
 include ':androidprinter'
-include ':klogger'
+include ':core'
 include ':demoapp'
 rootProject.name = "KLogger"

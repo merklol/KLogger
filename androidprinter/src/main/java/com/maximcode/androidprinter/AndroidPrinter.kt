@@ -1,14 +1,14 @@
 package com.maximcode.androidprinter
 
 import android.util.Log
-import com.maximcode.klogger.KLogger
-import com.maximcode.klogger.printers.Printer
-import com.maximcode.klogger.rules.DebugRule
-import com.maximcode.klogger.rules.Rule
-import com.maximcode.klogger.tags.KLoggerTag
-import com.maximcode.klogger.tags.Tag
-import com.maximcode.klogger.utils.isNull
-import com.maximcode.klogger.utils.toStackTraceString
+import com.maximcode.core.KLogger
+import com.maximcode.core.printers.Printer
+import com.maximcode.core.rules.DebugRule
+import com.maximcode.core.rules.Rule
+import com.maximcode.core.tags.KLoggerTag
+import com.maximcode.core.tags.Tag
+import com.maximcode.core.utils.isNull
+import com.maximcode.core.utils.toStackTraceString
 
 /**
  * Implementation of [Printer] interface for Android applications.

@@ -1,8 +1,8 @@
 package com.maximcode.androidprinter
 
 import android.os.Build
-import com.maximcode.klogger.KLogger
-import com.maximcode.klogger.templates.Template
+import com.maximcode.core.KLogger
+import com.maximcode.core.templates.Template
 
 /**
  * Implementation of [Template] interface for Android applications.
