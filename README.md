@@ -18,31 +18,20 @@ allprojects {
 }
 ```
 
-Add the dependency:
+Add the dependencies:
 
 ```groovy
 dependencies {
-    implementation 'com.github.merklol:KLogger:0.1'
+    implementation 'com.github.merklol.KLogger:core:0.3'
+
+    //Printer for Android applicartions
+    implementation 'com.github.merklol.KLogger:androidprinter:0.3'
 }
 ```
 
 ### Usage
 
-Initialize an instance of KLogger and start logging:
-
-```kotlin
-fun main() {
-    KLogger.init(ConsolePrinter())
-    KLogger.info("Hello world!")
-}
-```
-
-#### Output
-```
-I/KLogger: Loader.kt:7.load(): Hello world!
-```
-
-By default, ConsolePrinter takes DebugRule as the default value. You can also use ReleaseRule instead. 
+> **NOTE:**  By default, ConsolePrinter takes DebugRule as the default value. You can also use ReleaseRule instead. 
 The rule hides all verbose, debug, and info log events.
 
 ```kotlin
@@ -51,7 +40,54 @@ fun main() {
 }
 ```
 
-#### Custom Printer
+#### 1. Kotlin
+
+Initialize an instance of KLogger and start logging:
+
+```kotlin
+fun main() {
+    KLogger.init(ConsolePrinter())
+        KLogger.info("Hello there!")
+        KLogger.warn("Warning!")
+        KLogger.error("Error!", RuntimeException("Something happened"))
+}
+```
+
+##### Output
+![Example 1](ex1.png)
+
+#### 2. Android
+
+Initialize an instance of KLogger in the Application class:
+
+```kotlin
+class App: Application() {
+    override fun onCreate() {
+        super.onCreate()
+        KLogger.init(AndroidPrinter())
+    }
+}
+```
+
+Now, you can define log statements in your View files:
+
+```kotlin
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        KLogger.info("Hello world!")
+    }
+}
+```
+
+##### Output
+![Example 1](ex2.png)
+
+
+
+#### 3. Custom Printer
 
 To create a custom printer, implement Printer interface:
 
